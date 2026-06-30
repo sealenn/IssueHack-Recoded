@@ -2,7 +2,7 @@ using System;
 using MelonLoader;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(L0LeRModMenu.MainMod), "Issue's Hack Recoded", "1.0.0", "Sealeen")]
+[assembly: MelonInfo(typeof(L0LeRModMenu.MainMod), "Issue Hack Recoded", "1.0.0", "Sealeen")]
 [assembly: MelonGame(null, null)]
 
 namespace L0LeRModMenu
@@ -14,11 +14,11 @@ namespace L0LeRModMenu
         private int _currentTab = 0;
 
         // bools
-        // baby bools
+        // Baby
         private bool _babyCallGranny = false;
         private bool _forceBabyChase = false;
 
-        // nanny bools
+        // nanny
         private bool _grannyAtDishes = false;
         private bool _grannyAtPiano = false;
         private string _grannyDoorDistanceStr = "3.0";
@@ -36,7 +36,7 @@ namespace L0LeRModMenu
         private string _grannyWalkAnimStr = "1.0";
         private string _grannyWalkSpeedStr = "2.0";
 
-        // ded bools
+        // ded
         private bool _dedAtCams = false;
         private bool _dedAtRadio = false;
         private string _dedKillDistanceStr = "1.5";
@@ -72,7 +72,6 @@ namespace L0LeRModMenu
         {
             GUI.DragWindow(new Rect(0, 0, 450, 20));
 
-            // tabss
             string[] tabs = { "Baby_AI", "Granny_AI", "Grandpa_AI" };
             _currentTab = GUILayout.Toolbar(_currentTab, tabs);
 
@@ -95,27 +94,27 @@ namespace L0LeRModMenu
             GUILayout.EndVertical();
         }
 
-        // baby
+        // baby label
         private void DrawBabyTab()
         {
             GUILayout.Label("<b>Baby manipulation</b>");
 
-            _babyCallGranny = GUILayout.Toggle(_babyCallGranny, "Granny call");
+            _babyCallGranny = GUILayout.Toggle(_babyCallGranny, "Call Granny");
             _forceBabyChase = GUILayout.Toggle(_forceBabyChase, "Force Baby Chase Player");
 
             if (GUILayout.Button("Apply", GUILayout.Width(100)))
             {
-                var baby = UnityEngine.Object.FindObjectOfType<Il2Cpp.AI_Baby>();
+                var baby = UnityEngine.Object.FindObjectOfType<AI_Baby>();
                 if (baby != null)
                 {
                     baby.CalledGranny = _babyCallGranny;
                     baby.Chasing = _forceBabyChase;
-                    MelonLogger.Msg("baby pop");
+                    MelonLogger.Msg("Baby pop");
                 }
             }
         }
 
-        // nanny
+        // nanny label
         private void DrawGrannyTab()
         {
             GUILayout.Label("<b>Granny manipulation</b>");
@@ -167,10 +166,9 @@ namespace L0LeRModMenu
 
             if (GUILayout.Button("Apply", GUILayout.Width(100)))
             {
-                var granny = UnityEngine.Object.FindObjectOfType<Il2Cpp.AI_Granny>();
+                var granny = UnityEngine.Object.FindObjectOfType<AI_Granny>();
                 if (granny != null)
                 {
-                    // bools ?
                     granny.AtDishes = _grannyAtDishes;
                     granny.AtPiano = _grannyAtPiano;
                     granny.IsAngry = _grannyIsAngry;
@@ -179,7 +177,6 @@ namespace L0LeRModMenu
                     granny.IsSearching = _grannyIsSearching;
                     granny.PlacingTrap = _grannyPlacingTrap;
 
-                    // pars
                     if (float.TryParse(_grannyDoorDistanceStr, out float doorDist)) granny.DoorDistance = doorDist;
                     if (float.TryParse(_grannyKillDistanceStr, out float killDist)) granny.DistanceJumpscare = killDist;
                     if (float.TryParse(_grannyRunAnimStr, out float runAnim)) granny.Run_Anim = runAnim;
@@ -187,16 +184,12 @@ namespace L0LeRModMenu
                     if (float.TryParse(_grannyWalkAnimStr, out float walkAnim)) granny.Walk_Anim = walkAnim;
                     if (float.TryParse(_grannyWalkSpeedStr, out float walkSpeed)) granny.Walk_Speed = walkSpeed;
 
-                    // work
-                    var grannyEyes = UnityEngine.Object.FindObjectOfType<Il2Cpp.Eyes_Granny.AI>(); 
+                    // fix
+                    var grannyEyes = UnityEngine.Object.FindObjectOfType<Eyes_Granny>(); 
                     if (grannyEyes != null)
                     {
                         grannyEyes.PlayerSpotted = _forceGrannyChasingEyes;
                         if (float.TryParse(_grannyViewRangeStr, out float viewRange)) grannyEyes.ViewRange = viewRange;
-                        
-                        if (ColorUtility.TryParseHtmlString(_grannyEyesColorStr, out Color customColor))
-                        {
-                        }
                     }
 
                     MelonLogger.Msg("granny pop");
@@ -204,10 +197,10 @@ namespace L0LeRModMenu
             }
         }
 
-        // ded
+        // ded panel
         private void DrawGrandpaTab()
         {
-            GUILayout.Label("<b>Ded manipulation</b>");
+            GUILayout.Label("<b>ded manipulation</b>");
 
             _dedAtCams = GUILayout.Toggle(_dedAtCams, "Force Ded Be in Cams");
             _dedAtRadio = GUILayout.Toggle(_dedAtRadio, "Force Ded Dance in Radio");
@@ -246,7 +239,7 @@ namespace L0LeRModMenu
 
             if (GUILayout.Button("Apply", GUILayout.Width(100)))
             {
-                var grandpa = UnityEngine.Object.FindObjectOfType<Il2Cpp.AI_Grandpa>();
+                var grandpa = UnityEngine.Object.FindObjectOfType<AI_Grandpa>();
                 if (grandpa != null)
                 {
                     grandpa.AtCams = _dedAtCams;
