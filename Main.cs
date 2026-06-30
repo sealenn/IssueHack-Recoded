@@ -2,6 +2,8 @@ using System;
 using MelonLoader;
 using UnityEngine;
 using Il2Cpp;
+using Il2CppInterop;
+using Il2CppInterop.Runtime;
 
 [assembly: MelonInfo(typeof(L0LeRModMenu.MainMod), "Issue Hack Recoded", "1.0.0", "Sealeen")]
 [assembly: MelonGame(null, null)]
