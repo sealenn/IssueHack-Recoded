@@ -65,7 +65,7 @@ namespace L0LeRModMenu
             if (!_isOpen) return;
 
             GUI.skin.window.normal.textColor = Color.white;
-            _windowRect = GUI.Window(0, _windowRect, (GUI.WindowFunction)DrawMenu, "<color=white><b>L0LeR Mod Menu</b></color>");
+            _windowRect = GUI.Window(0, _windowRect, (GUI.WindowFunction)DrawMenu, "<color=white><b>Issue's Hack Recode</b></color>");
         }
 
         private void DrawMenu(int windowID)
@@ -98,9 +98,9 @@ namespace L0LeRModMenu
         // baby
         private void DrawBabyTab()
         {
-            GUILayout.Label("<b>Baby AI Controls</b>");
+            GUILayout.Label("<b>Baby manipulation</b>");
 
-            _babyCallGranny = GUILayout.Toggle(_babyCallGranny, "Baby Call Granny");
+            _babyCallGranny = GUILayout.Toggle(_babyCallGranny, "Granny call");
             _forceBabyChase = GUILayout.Toggle(_forceBabyChase, "Force Baby Chase Player");
 
             if (GUILayout.Button("Apply", GUILayout.Width(100)))
@@ -110,7 +110,7 @@ namespace L0LeRModMenu
                 {
                     baby.CalledGranny = _babyCallGranny;
                     baby.Chasing = _forceBabyChase;
-                    MelonLogger.Msg("Baby AI settings applied.");
+                    MelonLogger.Msg("baby pop");
                 }
             }
         }
@@ -118,7 +118,7 @@ namespace L0LeRModMenu
         // nanny
         private void DrawGrannyTab()
         {
-            GUILayout.Label("<b>Granny AI Controls</b>");
+            GUILayout.Label("<b>Granny manipulation</b>");
 
             _grannyAtDishes = GUILayout.Toggle(_grannyAtDishes, "Force Granny Be At Dishes");
             _grannyAtPiano = GUILayout.Toggle(_grannyAtPiano, "Force Granny Be At Piano");
@@ -207,7 +207,7 @@ namespace L0LeRModMenu
         // ded
         private void DrawGrandpaTab()
         {
-            GUILayout.Label("<b>Grandpa AI Controls</b>");
+            GUILayout.Label("<b>Ded manipulation</b>");
 
             _dedAtCams = GUILayout.Toggle(_dedAtCams, "Force Ded Be in Cams");
             _dedAtRadio = GUILayout.Toggle(_dedAtRadio, "Force Ded Dance in Radio");
