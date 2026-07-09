@@ -1,12 +1,10 @@
-# [IssueHack Recoded]
+# Issue's-Hack Recode
 
-## Warning!
-This project is purely for **educational and research purposes**. 
+This Hack is built strictly for **educational purposes and not support any type of cheating in game*
 
-* **I don’t support or encourage cheating.**
-* My goal is simply to **dive deeper into game development and cybersecurity**. I'm using tools like **UnityExplorer** to look under the hood, understand how games are structured, and see how vulnerabilities work in Unity-based games like Granny 2 Enchanted.
-* Please use this responsibly. The code and findings here are meant for learning, not for exploitation.
-
+* **I don't support or condone cheating* in games. This project wasn't made to ruin fair gameplay fun
+* For me, it’s all about **diving deep into game mechanics*. I wanted to see how Unity-based games like Granny 2 Look
+* Yes, this project includes a custom non-offical in-game console interface that gives you unfair gameplay and thing's. However, this was developed purely for short fun, not for serious use. As a hands-on way to test game, experiment with UnityExplorer, and see what i can do with all of that
+* use this responsibly. I am not responsible for how you use this code or any consequences that come from it.
 ---
-
-This repository is my personal sandbox for exploring **Granny : Chapter Two by OmGi**. Instead of just playing, I wanted to see how the game functions from the inside.
+Credits goes to OmGi for Granny : Chapter Two Enchanted.
