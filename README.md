@@ -1,6 +1,6 @@
 # Issue's-Hack Recode
 
-This Hack *not support any type of cheating in game*
+> This Hack *not support any type of cheating in game*
 
 * *I don't support or condone cheating* in games. This project wasn't made to ruin fair gameplay fun
     * For me, it’s all about *diving deep into game mechanics*. I wanted to see how Unity-based games like Granny 2 Look
